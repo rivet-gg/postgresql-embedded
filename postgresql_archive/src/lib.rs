@@ -125,8 +125,10 @@ pub mod hasher;
 pub mod matcher;
 pub mod repository;
 mod version;
+mod target;
 
 pub use archive::{extract, get_archive, get_version};
 pub use error::{Error, Result};
 pub use semver::{Version, VersionReq};
 pub use version::{ExactVersion, ExactVersionReq};
+pub use target::get_target_triple;
