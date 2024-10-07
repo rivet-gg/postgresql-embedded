@@ -22,7 +22,7 @@ pub(crate) async fn stage_postgresql_archive() -> Result<()> {
     let default_releases_url = String::new();
     let releases_url = env::var("POSTGRESQL_RELEASES_URL").unwrap_or(default_releases_url);
     println!("PostgreSQL releases URL: {releases_url}");
-    let postgres_version_req = env::var("POSTGRESQL_VERSION").unwrap_or("*".to_string());
+    let postgres_version_req = env::var("POSTGRESQL_VERSION").unwrap_or("=16.4.0".to_string());
     let version_req = VersionReq::from_str(postgres_version_req.as_str())?;
     println!("PostgreSQL version: {postgres_version_req}");
     println!("Target: {}", postgresql_archive::get_target_triple());
